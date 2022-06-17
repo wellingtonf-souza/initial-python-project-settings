@@ -1,0 +1,46 @@
+repos:
+-   repo: https://github.com/ambv/black
+    rev: 22.3.0
+    hooks:
+    - id: black
+      language_version: python3.7 
+      stages: [commit]
+-   repo: https://gitlab.com/pycqa/flake8.git
+    rev: 3.7.9
+    hooks:
+    - id: flake8
+      stages: [commit]
+-   repo: local
+    hooks:
+    - id: pytest
+      name: pytest
+      language: system
+      entry: venv/bin/pytest -v -s
+      always_run: true
+      pass_filenames: false
+      stages: [commit]
+-   repo: https://github.com/PyCQA/bandit
+    rev: 1.7.4
+    hooks:
+    - id: bandit
+      name: bandit
+      exclude: ^tests/
+      args:
+        - -r
+        - src
+      stages: [commit]
+-   repo: local
+    hooks:
+      - id: requirements
+        name: requirements
+        entry: bash -c 'venv/bin/pip3 freeze > requirements.txt; git add requirements.txt'
+        language: system
+        pass_filenames: false
+        stages: [commit]
+-   repo: local
+    hooks:
+    - id: safety
+      name: safety
+      entry: bash -c 'safety check'
+      language: system
+      stages: [commit]
