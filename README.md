@@ -47,6 +47,7 @@ pre-commit install
 O arquivo `.pre-commit-config.yaml` executa os seguintes frameworks:
 * black: ferramenta para formatar o código Python
 * flake8: ferramenta para aplicação do Guia de Estilo Python
+* pylint: Outra ferramenta para aplicação do Guia de Estilo Python
 * bandit: ferramenta projetada para encontrar problemas comuns de segurança no código Python
 * safety: ferramenta para verificar as dependências instaladas quanto a vulnerabilidades de segurança conhecidas
 * pytest: ferramenta para execução de testes
