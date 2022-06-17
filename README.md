@@ -26,7 +26,7 @@ sudo make altinstall
 
 A partir dos passos acima o `import sqlite3` deve ocorrer normalmente. O `sqlite3` é necessário para o framework pre-commit.
 
-Para iniciar as configurações inicias do projeto basta executar:
+Para iniciar o projeto basta executar:
 
 ~~~bash
 virtualenv venv
@@ -49,3 +49,5 @@ O arquivo `.pre-commit-config.yaml` executa os seguintes frameworks:
 * flake8: ferramenta para aplicação do Guia de Estilo Python
 * bandit: ferramenta projetada para encontrar problemas comuns de segurança no código Python
 * safety: ferramenta para verificar as dependências instaladas quanto a vulnerabilidades de segurança conhecidas
+* pytest: ferramenta para execução de testes
+* coverage: ferramenta para medir a cobertura do código
